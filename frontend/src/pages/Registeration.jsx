@@ -26,7 +26,7 @@ const Registeration = () => {
 
     try {
       const response = await axios.post(
-        "http://localhost:9090/auth/register",
+        "http://localhost:9092/auth/register",
         userData,
         {
           withCredentials: true,

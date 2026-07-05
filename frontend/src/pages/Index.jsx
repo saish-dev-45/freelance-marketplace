@@ -19,7 +19,7 @@ function Index() {
 
   const fetchUser = async () => {
     try {
-      const response = await axios.get("http://localhost:9090/auth/me", {
+      const response = await axios.get("http://localhost:9092/auth/me", {
         withCredentials: true,
       });
       setUser(response.data);
@@ -45,14 +45,14 @@ function Index() {
         <div className="navbar-right">
           {user ? (
             <div className="navbar-user-section">
-              <span className="navbar-welcome">👋 {user.username}</span>
+              <span className="navbar-welcome">{user.username}</span>
 
               <button
                 className="btn-logout"
                 onClick={async () => {
                   try {
                     await axios.post(
-                      "http://localhost:9090/auth/logout",
+                      "http://localhost:9092/auth/logout",
                       {},
                       {
                         withCredentials: true,
@@ -86,11 +86,11 @@ function Index() {
         {/* LEFT SIDE */}
         <div className="hero-content">
           <div className="hero-badge">
-            Trusted by 10,000+ freelancers across India
+            Trusted by 10,000+ students across India
           </div>
 
           <h1 className="hero-heading">
-            Build your freelance career with <em>confidence</em>
+            Showcase your skills with <em>confidence</em>
           </h1>
 
           <p className="hero-subtext">
@@ -104,7 +104,7 @@ function Index() {
               className="btn-primary"
               onClick={() => navigate("/freelancer")}
             >
-              Start Freelancing
+              Start Browsing Projects
             </button>
 
             <button className="btn-outline" onClick={() => navigate("/client")}>
@@ -168,7 +168,7 @@ function Index() {
       <div className="stats-bar">
         <div className="stat-item">
           <span className="stat-num">50K+</span>
-          <span className="stat-label">Active Freelancers</span>
+          <span className="stat-label">Active students</span>
         </div>
         <div className="stat-item">
           <span className="stat-num">12K+</span>
@@ -180,7 +180,7 @@ function Index() {
         </div>
         <div className="stat-item">
           <span className="stat-num">₹40Cr+</span>
-          <span className="stat-label">Paid to Freelancers</span>
+          <span className="stat-label">Paid to students</span>
         </div>
       </div>
 
@@ -200,7 +200,7 @@ function Index() {
             <h3>Create Your Profile</h3>
 
             <p>
-              Sign up and set up your profile as a freelancer or client in just
+              Sign up and set up your profile as a student or client in just
               a few minutes.
             </p>
           </div>
@@ -214,7 +214,7 @@ function Index() {
             <h3>Browse & Match</h3>
 
             <p>
-              Clients post projects. Freelancers browse and submit proposals.
+              Clients post projects. Students browse and submit proposals.
               Smart matching handles the rest.
             </p>
           </div>
@@ -238,17 +238,17 @@ function Index() {
       {/* ── ROLE CARDS ── */}
       <section className="section roles-section" id="roles">
         <p className="section-label">Choose Your Path</p>
-        <h2 className="section-title">Join as a Freelancer or Client</h2>
+        <h2 className="section-title">Join as a Student or Client</h2>
         <div className="role-grid">
           {/* Freelancer Card */}
           <div className="role-card role-card--featured">
             <img src={briefcase} alt="Freelancer" className="role-image" />
 
             <span className="role-badge role-badge--featured">
-              🔥 Most Popular
+              Most Popular
             </span>
 
-            <h2>Freelancer</h2>
+            <h2>Student</h2>
 
             <p>
               Discover exciting projects, build your portfolio, and work with
@@ -281,7 +281,7 @@ function Index() {
               className="role-cta role-cta--primary"
               onClick={() => navigate("/freelancer")}
             >
-              Join as Freelancer →
+              Join as Student →
             </button>
           </div>
 
@@ -294,7 +294,7 @@ function Index() {
             <h2>Client</h2>
 
             <p>
-              Post projects, hire top-rated freelancers, and scale your business
+              Post projects, hire top-rated Students, and scale your business
               faster without the overhead.
             </p>
 
@@ -324,7 +324,7 @@ function Index() {
               className="role-cta role-cta--outline"
               onClick={() => navigate("/client")}
             >
-              Hire Freelancers →
+              Hire Students →
             </button>
           </div>
         </div>
